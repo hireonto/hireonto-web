@@ -1,0 +1,208 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #0a2540;
+  --muted: #425466;
+  --stripe-border: #e3e8ee;
+  --stripe-surface: #f6f9fc;
+  --stripe-blurple: #635bff;
+  --stripe-cyan: #00d4ff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-ink: var(--foreground);
+  --color-muted: var(--muted);
+  --color-stripe-border: var(--stripe-border);
+  --color-stripe-surface: var(--stripe-surface);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --animate-marquee: marquee 40s linear infinite;
+  --shadow-stripe: 0 50px 100px -20px rgba(50, 50, 93, 0.12), 0 30px 60px -30px rgba(0, 0, 0, 0.15),
+    0 -18px 40px -24px rgba(0, 0, 0, 0.05);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.stripe-hero-gradient {
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(99, 91, 255, 0.12), transparent 55%),
+    radial-gradient(ellipse 60% 40% at 100% 0%, rgba(0, 212, 255, 0.08), transparent 50%),
+    linear-gradient(180deg, #ffffff 0%, #fafbfc 100%);
+}
+
+.stripe-panel {
+  background: #ffffff;
+  border: 1px solid var(--stripe-border);
+  box-shadow: var(--shadow-stripe);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid var(--stripe-border);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 12px rgba(50, 50, 93, 0.06);
+}
+
+.shadow-stripe {
+  box-shadow: var(--shadow-stripe);
+}
+
+.glow-ring {
+  box-shadow: var(--shadow-stripe);
+}
+
+.pill-nav {
+  border: 1px solid var(--stripe-border);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 16px rgba(50, 50, 93, 0.06);
+}
+
+.text-gradient-hero {
+  background: linear-gradient(135deg, #635bff 0%, #0073e6 50%, #00d4ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.marquee-mask {
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.prose-legal h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--foreground);
+}
+.prose-legal h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+.prose-legal p,
+.prose-legal li {
+  color: var(--muted);
+  line-height: 1.7;
+}
+.prose-legal ul {
+  list-style: disc;
+  padding-left: 1.25rem;
+  margin: 0.75rem 0;
+}
+
+.grid-bg {
+  display: none;
+}
+
+.shimmer-hover {
+  position: relative;
+  overflow: hidden;
+}
+.shimmer-hover::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 35%, rgba(99, 91, 255, 0.06) 50%, transparent 65%);
+  transform: translateX(-100%);
+  transition: transform 0.7s ease;
+  pointer-events: none;
+}
+.shimmer-hover:hover::after {
+  transform: translateX(100%);
+}
+
+/* HireOnto brand gradient (brand kit: #2563EB → #6D28D9 → #9333EA) */
+.brand-text-gradient {
+  background: linear-gradient(135deg, #2563eb 0%, #6d28d9 52%, #9333ea 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ── Product mockups (HTML/CSS illustrations) ── */
+@keyframes mock-bar { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes mock-wave { 0%, 100% { transform: scaleY(0.35); } 50% { transform: scaleY(1); } }
+@keyframes mock-pulse { 0% { transform: scale(0.9); opacity: 0.55; } 100% { transform: scale(1.6); opacity: 0; } }
+@keyframes mock-blink { 0%, 100% { opacity: 0.25; } 50% { opacity: 1; } }
+@keyframes mock-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+.mock-bar { transform-origin: left; animation: mock-bar 1.1s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.mock-wave > span { animation: mock-wave 1.1s ease-in-out infinite; transform-origin: center; }
+.mock-pulse { animation: mock-pulse 2.2s ease-out infinite; }
+.mock-blink { animation: mock-blink 1.2s ease-in-out infinite; }
+.mock-float { animation: mock-float 6s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .mock-bar, .mock-wave > span, .mock-pulse, .mock-blink, .mock-float { animation: none; }
+}
+
+/* ── Agent mascots (Onric & Tovia) ── */
+@keyframes bot-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+@keyframes bot-shadow { 0%, 100% { transform: scaleX(1); opacity: 0.12; } 50% { transform: scaleX(0.86); opacity: 0.07; } }
+@keyframes bot-blink { 0%, 92%, 100% { transform: scaleY(1); } 95% { transform: scaleY(0.1); } }
+@keyframes bot-wave { 0%, 60%, 100% { transform: rotate(0deg); } 70% { transform: rotate(-14deg); } 80% { transform: rotate(8deg); } 90% { transform: rotate(-10deg); } }
+@keyframes bot-glow { 0%, 100% { opacity: 1; } 50% { opacity: 0.55; } }
+@keyframes bot-eq { 0%, 100% { transform: scaleY(0.35); } 50% { transform: scaleY(1); } }
+.bot-float { animation: bot-float 4.5s ease-in-out infinite; }
+.bot-shadow { transform-box: fill-box; transform-origin: center; animation: bot-shadow 4.5s ease-in-out infinite; }
+.bot-blink { transform-box: fill-box; transform-origin: center; animation: bot-blink 4.2s ease-in-out infinite; }
+.bot-wave { transform-box: fill-box; transform-origin: 50% 90%; animation: bot-wave 3.6s ease-in-out infinite; }
+.bot-glow { animation: bot-glow 2s ease-in-out infinite; }
+.bot-eq > rect { transform-box: fill-box; transform-origin: center; animation: bot-eq 0.9s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .bot-float, .bot-shadow, .bot-blink, .bot-wave, .bot-glow, .bot-eq > rect { animation: none; }
+}
+
+/* ── Stripe-style motion helpers ── */
+@keyframes flow-dash { to { stroke-dashoffset: -24; } }
+.flow-dash { stroke-dasharray: 4 8; animation: flow-dash 1.2s linear infinite; }
+@keyframes tab-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+.btn-arrow .arrow-line { opacity: 0; transition: opacity 150ms; }
+.btn-arrow:hover .arrow-line { opacity: 1; }
+.btn-arrow .arrow-head { transition: transform 150ms; }
+.btn-arrow:hover .arrow-head { transform: translateX(3px); }
+@media (prefers-reduced-motion: reduce) { .flow-dash { animation: none; } }
+
+/* Agents band: bots roam, hop and tilt (offset so they move out of sync) */
+@keyframes bot-roam-a {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  20% { transform: translate(14px, -18px) rotate(4deg); }
+  40% { transform: translate(-6px, -6px) rotate(-3deg); }
+  60% { transform: translate(-16px, -22px) rotate(-5deg); }
+  80% { transform: translate(4px, -4px) rotate(2deg); }
+}
+@keyframes bot-roam-b {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(-14px, -22px) rotate(-4deg); }
+  50% { transform: translate(8px, -8px) rotate(3deg); }
+  75% { transform: translate(16px, -20px) rotate(5deg); }
+}
+.bot-roam-a { animation: bot-roam-a 7s ease-in-out infinite; }
+.bot-roam-b { animation: bot-roam-b 8s ease-in-out infinite; animation-delay: -2s; }
+@media (prefers-reduced-motion: reduce) { .bot-roam-a, .bot-roam-b { animation: none; } }
+
+/* ── Agent avatars (TA look) ── */
+@keyframes avatar-breathe { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-3px) rotate(-1.2deg); } }
+.avatar-breathe { transform-box: fill-box; transform-origin: 50% 100%; animation: avatar-breathe 5s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) { .avatar-breathe { animation: none; } }

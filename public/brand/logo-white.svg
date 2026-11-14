@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 120">
+
+<defs>
+  <linearGradient id="brand" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#2563EB"/>
+    <stop offset="52%" stop-color="#6D28D9"/>
+    <stop offset="100%" stop-color="#9333EA"/>
+  </linearGradient>
+</defs>
+<rect width="100%" height="100%" fill="#101936"/>
+<g transform="translate(12,8) scale(.42)">
+
+<defs>
+  <linearGradient id="brand" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#2563EB"/>
+    <stop offset="52%" stop-color="#6D28D9"/>
+    <stop offset="100%" stop-color="#9333EA"/>
+  </linearGradient>
+</defs>
+<path d="M55 35h48L78 190H30L55 35Z" fill="url(#brand)"/>
+<path d="M137 35h48l-25 155h-48l25-155Z" fill="url(#brand)"/>
+<path d="M24 139c47-41 105-19 151-65 12-12 23-25 34-41-3 40-20 73-48 97-43 37-97 23-137 66-10 11-18 22-26 35 1-36 9-67 26-92Z" fill="#A78BFA"/>
+<path d="M190 18l6 15 15 6-15 6-6 15-6-15-15-6 15-6 6-15Z" fill="#6D28D9"/>
+</g>
+<text x="125" y="91" font-family="Inter, Arial, sans-serif" font-size="76" font-weight="750" letter-spacing="-3" fill="#FFFFFF">Hire</text>
+<text x="290" y="91" font-family="Inter, Arial, sans-serif" font-size="76" font-weight="750" letter-spacing="-3" fill="url(#brand)">Onto</text>
+
+</svg>
