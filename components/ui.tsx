@@ -90,12 +90,15 @@ export function LinkButton({
   variant = 'primary',
   className,
   arrow = false,
+  newTab = false,
 }: {
   href: string
   children: ReactNode
   variant?: 'primary' | 'ghost' | 'outline' | 'dark'
   className?: string
   arrow?: boolean
+  /** Open the link in a new browser tab. */
+  newTab?: boolean
 }) {
   const base =
     'btn-arrow inline-flex items-center justify-center gap-1.5 rounded-full px-4 py-2 text-sm font-semibold transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#6d28d9]'
@@ -106,7 +109,11 @@ export function LinkButton({
     outline: 'border border-stripe-border bg-white text-ink hover:border-ink/30',
   }
   return (
-    <Link href={href} className={`${base} ${styles[variant]} ${className ?? ''}`}>
+    <Link
+      href={href}
+      className={`${base} ${styles[variant]} ${className ?? ''}`}
+      {...(newTab && { target: '_blank', rel: 'noopener noreferrer' })}
+    >
       {children}
       {arrow && <Arrow />}
     </Link>

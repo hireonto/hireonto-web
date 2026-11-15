@@ -86,7 +86,7 @@ export function Header() {
           </nav>
         </div>
         <div className="hidden items-center gap-2 lg:flex">
-          <LinkButton href={site.appUrl} variant="ghost" className="text-sm">
+          <LinkButton href={site.loginUrl} newTab variant="ghost" className="text-sm">
             Sign in
           </LinkButton>
           <LinkButton href="/demo" className="text-sm">
@@ -136,7 +136,7 @@ export function Header() {
             Pricing
           </Link>
           <div className="mt-4 grid grid-cols-2 gap-2 pb-2">
-            <LinkButton href={site.appUrl} variant="outline" className="w-full">
+            <LinkButton href={site.loginUrl} newTab variant="outline" className="w-full">
               Sign in
             </LinkButton>
             <LinkButton href="/demo" className="w-full">

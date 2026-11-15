@@ -37,9 +37,13 @@ export function Footer() {
             <div>
               <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-muted">Company</p>
               <ul className="mt-4 space-y-2.5 text-sm">
-                {[{ href: '/pricing', label: 'Pricing' }, { href: '/demo', label: 'Contact sales' }, { href: site.appUrl, label: 'Sign in' }].map((item) => (
+                {[{ href: '/pricing', label: 'Pricing' }, { href: '/demo', label: 'Contact sales' }, { href: site.loginUrl, label: 'Sign in' }].map((item) => (
                   <li key={item.label}>
-                    <Link href={item.href} className="text-ink/80 transition hover:text-[#6d28d9]">
+                    <Link
+                      href={item.href}
+                      className="text-ink/80 transition hover:text-[#6d28d9]"
+                      {...(item.href === site.loginUrl && { target: '_blank', rel: 'noopener noreferrer' })}
+                    >
                       {item.label}
                     </Link>
                   </li>

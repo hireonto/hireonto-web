@@ -9,7 +9,8 @@ export const site = {
   url:
     process.env.NEXT_PUBLIC_SITE_URL ??
     (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : 'http://localhost:3002'),
-  appUrl: process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000',
+  /** Recruiter app login page (all "Sign in" links point here). */
+  loginUrl: process.env.NEXT_PUBLIC_LOGIN_URL ?? 'https://app.hireonto.com/login',
   /** Public contact address shown on legal pages. */
   contactEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? '',
   copyrightYear: 2026,

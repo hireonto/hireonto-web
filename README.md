@@ -13,7 +13,7 @@ npm run dev
 
 Open **http://localhost:3002**
 
-Product app (recruiter login) stays at **http://localhost:3000** (`NEXT_PUBLIC_APP_URL`).
+"Sign in" links go to **https://app.hireonto.com/login** (override with `NEXT_PUBLIC_LOGIN_URL`).
 
 ## Demo form security
 
